@@ -83,8 +83,8 @@ void loop() {
   drawEyes(eyeHeight);
   delay(10000);
 
-  int chance = random(1, 7);
-  if (chance == 1) {
+  int randomNumber = random(1, 7);
+  if (randomNumber == 1) {
     displayMessage();
     delay(5000);
   }
