@@ -21,6 +21,16 @@ int smileX = 65;
 int smileY = 50;
 int smileRadius = 5;
 
+const char* messages[] = {
+  "Don't forget to solve programming problems and Duolingo",
+  "Please do Time Management to avoid getting late and do multiple things",
+  "Learn everyday and act fast",
+  "Sleep is an important part of learning",
+  "Beep Boop :)"
+};
+
+const int messageCount = sizeof(messages) / sizeof(messages[0]);
+
 void drawEyes(int h) {
   display.clearDisplay();
 
@@ -59,8 +69,15 @@ void displayMessage() {
   display.clearDisplay();
   display.setTextSize(1);
   display.setTextColor(SH110X_WHITE);
-  display.setCursor(10, 30);
-  display.println("Hello World");
+
+  int randomIndex = random(messageCount);
+  int16_t x1, y1;
+  uint16_t w, h;
+
+  display.getTextBounds(messages[randomIndex], 0, 0, &x1, &y1, &w, &h);
+  display.setCursor((SCREEN_WIDTH - w) / 2, 30);
+  display.println(messages[randomIndex]);
+
   display.display();
 }
 
