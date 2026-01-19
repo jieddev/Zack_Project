@@ -1,2 +1,2 @@
 # Zack_Project
-Zack Project is about my OLED Robot that shows a display message randomly
+Zack Project is a mini-project about my OLED+ESP32 Robot using AdaFruit library that shows robot eyes and display quotes randomly
